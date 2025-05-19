@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stopwatch</title>
+  <style>
+    body {
+      /*background-color: #f7f7f7;*/
+      background-image: url(https://media2.giphy.com/media/4N1FZFE5AGO3qrUGkw/source.gif);
+     background-repeat:no no-repeat;
+     background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+
+    #res {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #34495e;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 8px 4px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #3498db;
+      color: white;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Stopwatch</h1>
+    <div id="res"></div>
+    <button onclick="start()"><strong>Start</strong></button>
+    <button onclick="stop()"><strong>Stop</strong></button>
+    <button onclick="reset()"><strong>Reset</strong></button>
+    <hr style="margin: 20px 0;">
+    <div>
+      <button onclick="window.location.href='access.html'"><strong>Home</strong></button>
+      <button onclick="window.location.href='index.html'"><strong>Add</strong></button>
+      <button onclick="window.location.href='calc.html'"><strong>Calc</strong></button>
+      <button onclick="window.location.href='temp.html'"><strong>Temp</strong></button>
+    </div>
+  </div>
+
+  <script>
+    let count = 0;
+    let intervalId = null;
+
+    function start() {
+      if (intervalId === null) {
+        intervalId = setInterval(() => {
+          document.getElementById("res").innerText = ++count;
+        }, 1000);
+      }
+    }
+
+    function stop() {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+
+    function reset() {
+      count = 0;
+      clearInterval(intervalId);
+      intervalId = null;
+      document.getElementById("res").innerText = count;
+    }
+  </script>
+</body>
+</html>

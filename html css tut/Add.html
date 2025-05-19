@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Two Numbers</title>
+  <style>
+    body {
+      /*background-color: #f7f7f7;*/
+      background-image: url(https://media2.giphy.com/media/4N1FZFE5AGO3qrUGkw/source.gif);
+     background-repeat:no no-repeat;
+     background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 12px 0 6px;
+    }
+
+    input[type="number"] {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    #res {
+      font-size: 18px;
+      font-weight: bold;
+      color: #34495e;
+      margin: 16px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 8px 4px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #3498db;
+      color: white;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Add Two Numbers</h1>
+    <div id="res"></div>
+
+    <label for="value1"><h3>Value 1</h3></label>
+    <input type="number" id="value1" placeholder="Enter a number" />
+
+    <label for="value2"><h3>Value 2</h3></label>
+    <input type="number" id="value2" placeholder="Enter a number" />
+
+    <button onclick="calculation()"><strong>Add</strong></button>
+
+    <hr style="margin: 20px 0;" />
+
+    <div>
+      <button onclick="window.location.href='access.html'"><strong>Home</strong></button>
+      <button onclick="window.location.href='time.html'"><strong>Time</strong></button>
+      <button onclick="window.location.href='temp.html'"><strong>Temp</strong></button>
+      <button onclick="window.location.href='calc.html'"><strong>Calc</strong></button>
+    </div>
+  </div>
+
+  <script>
+    function calculation() {
+      const a = document.getElementById("value1").value;
+      const b = document.getElementById("value2").value;
+      const c = Number(a) + Number(b);
+      document.getElementById("res").innerText = `Result: ${c}`;
+    }
+  </script>
+</body>
+</html>
